@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F39FFCCE181122190035F336 /* HUDLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FFCCD181122190035F336 /* HUDLoadingView.m */; };
 		F3AE52A6180FC80D0055AE17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3AE52A5180FC80D0055AE17 /* Foundation.framework */; };
 		F3AE52A8180FC80D0055AE17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3AE52A7180FC80D0055AE17 /* CoreGraphics.framework */; };
 		F3AE52AA180FC80D0055AE17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3AE52A9180FC80D0055AE17 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F39FFCCC181122190035F336 /* HUDLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLoadingView.h; sourceTree = "<group>"; };
+		F39FFCCD181122190035F336 /* HUDLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLoadingView.m; sourceTree = "<group>"; };
 		F3AE52A2180FC80D0055AE17 /* NXLoadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NXLoadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AE52A5180FC80D0055AE17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F3AE52A7180FC80D0055AE17 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +115,8 @@
 		F3AE52AB180FC80D0055AE17 /* NXLoadImage */ = {
 			isa = PBXGroup;
 			children = (
+				F39FFCCC181122190035F336 /* HUDLoadingView.h */,
+				F39FFCCD181122190035F336 /* HUDLoadingView.m */,
 				F3AE52B4180FC80D0055AE17 /* AppDelegate.h */,
 				F3AE52B5180FC80D0055AE17 /* AppDelegate.m */,
 				F3AE52B7180FC80D0055AE17 /* Main.storyboard */,
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3AE52BC180FC80D0055AE17 /* ViewController.m in Sources */,
+				F39FFCCE181122190035F336 /* HUDLoadingView.m in Sources */,
 				F3AE52B6180FC80D0055AE17 /* AppDelegate.m in Sources */,
 				F3AE52B2180FC80D0055AE17 /* main.m in Sources */,
 			);
@@ -460,6 +466,7 @@
 				F3AE52D6180FC80D0055AE17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F3AE52D7180FC80D0055AE17 /* Build configuration list for PBXNativeTarget "NXLoadImageTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +475,7 @@
 				F3AE52D9180FC80D0055AE17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

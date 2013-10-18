@@ -1,3 +1,5 @@
+开发环境：xcode5 + ios7
+
 更新日志：
 1. 采用gcd + dataWithContentsOfURL 加载图片，异步方式。
 2. 增加了一个简单的表示正在加载的菊花状态。
