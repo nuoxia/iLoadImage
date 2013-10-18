@@ -14,6 +14,12 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (strong, nonatomic) IBOutlet UIButton *removeButton;
+
+@property (strong, nonatomic) IBOutlet UISwitch *typeSwitch;
+
 - (IBAction)loadImage:(id)sender;
+- (IBAction)switchImageLoadType:(id)sender;
+- (IBAction)removeImage:(id)sender;
 
 @end
