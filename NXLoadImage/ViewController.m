@@ -8,12 +8,14 @@
 
 #import "ViewController.h"
 #import "HUDLoadingView.h"
+#import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 static NSString* urlStr = @"http://farm6.staticflickr.com/5524/9343383198_c2ab90031b_k.jpg";
 
 typedef enum{
     ImageLoadTypeData,
     ImageLoadTypeConnection,
+    ImageLoadTypeSDWebImage,
 }ImageLoadType;
 
 @interface ViewController () <NSURLConnectionDataDelegate> {
@@ -31,7 +33,7 @@ typedef enum{
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    loadType = ImageLoadTypeData;
+    loadType = ImageLoadTypeSDWebImage;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,26 +62,46 @@ typedef enum{
 }
 
 -(void)imageFromUrl: (NSURL*)url type: (ImageLoadType)type{
-    if (ImageLoadTypeData == type) {
-        [HUDLoadingView showLoadingView];
-        
-        dispatch_queue_t queue = dispatch_queue_create("loadImageFromUrl", NULL);
-        dispatch_async(queue, ^{
-            NSData* data = [NSData dataWithContentsOfURL:url];
+    
+    switch (type) {
+        case ImageLoadTypeData: {
+            [HUDLoadingView showLoadingView];
             
-            UIImage* image = [UIImage imageWithData:data];
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                self.imageView.image = image;
+            dispatch_queue_t queue = dispatch_queue_create("loadImageFromUrl", NULL);
+            dispatch_async(queue, ^{
+                NSData* data = [NSData dataWithContentsOfURL:url];
                 
-                [HUDLoadingView hideLoadingView];
+                UIImage* image = [UIImage imageWithData:data];
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    self.imageView.image = image;
+                    
+                    [HUDLoadingView hideLoadingView];
+                });
             });
-        });
-    } else {
-        NSURLRequest* request = [[NSURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:100.0];
-        NSURLConnection* connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
-        [connection start];
-        [HUDLoadingView showLoadingView];
+
+        }
+            break;
+        case ImageLoadTypeConnection: {
+            NSURLRequest* request = [[NSURLRequest alloc]initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:100.0];
+            NSURLConnection* connection = [[NSURLConnection alloc]initWithRequest:request delegate:self];
+            [connection start];
+            [HUDLoadingView showLoadingView];
+        }
+            break;
+        case ImageLoadTypeSDWebImage: {
+//            [HUDLoadingView showLoadingView];
+//            [self.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"image_loading_default"] completed:^(UIImage* image, NSError* error, SDImageCacheType cacheType){
+//                [HUDLoadingView hideLoadingView];
+//                if (error) {
+//                    NSLog(@"%@", error);
+//                }
+//            }];
+            
+            [self.imageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"image_loading_default"] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        }
+        default:
+            break;
     }
 }
 

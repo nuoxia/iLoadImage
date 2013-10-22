@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F38F533218162B2100195EAA /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38F533118162B2100195EAA /* SDWebImage.framework */; };
+		F38F533618162E0F00195EAA /* image_loading_default.png in Resources */ = {isa = PBXBuildFile; fileRef = F38F533418162E0F00195EAA /* image_loading_default.png */; };
+		F38F533718162E0F00195EAA /* image_loading_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F38F533518162E0F00195EAA /* image_loading_default@2x.png */; };
+		F38F5339181663B500195EAA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38F5338181663B500195EAA /* ImageIO.framework */; };
+		F38F533C18166D2A00195EAA /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F38F533B18166D2A00195EAA /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
 		F39FFCCE181122190035F336 /* HUDLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FFCCD181122190035F336 /* HUDLoadingView.m */; };
 		F3AE52A6180FC80D0055AE17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3AE52A5180FC80D0055AE17 /* Foundation.framework */; };
 		F3AE52A8180FC80D0055AE17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3AE52A7180FC80D0055AE17 /* CoreGraphics.framework */; };
@@ -35,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F38F533118162B2100195EAA /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		F38F533418162E0F00195EAA /* image_loading_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_loading_default.png; sourceTree = "<group>"; };
+		F38F533518162E0F00195EAA /* image_loading_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_loading_default@2x.png"; sourceTree = "<group>"; };
+		F38F5338181663B500195EAA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		F38F533A18166D2A00195EAA /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = SOURCE_ROOT; };
+		F38F533B18166D2A00195EAA /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = SOURCE_ROOT; };
 		F39FFCCC181122190035F336 /* HUDLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLoadingView.h; sourceTree = "<group>"; };
 		F39FFCCD181122190035F336 /* HUDLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLoadingView.m; sourceTree = "<group>"; };
 		F3AE52A2180FC80D0055AE17 /* NXLoadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NXLoadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38F5339181663B500195EAA /* ImageIO.framework in Frameworks */,
+				F38F533218162B2100195EAA /* SDWebImage.framework in Frameworks */,
 				F3AE52A8180FC80D0055AE17 /* CoreGraphics.framework in Frameworks */,
 				F3AE52AA180FC80D0055AE17 /* UIKit.framework in Frameworks */,
 				F3AE52A6180FC80D0055AE17 /* Foundation.framework in Frameworks */,
@@ -82,9 +95,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F38F533018162B2100195EAA /* Thirdlib */ = {
+			isa = PBXGroup;
+			children = (
+				F38F533118162B2100195EAA /* SDWebImage.framework */,
+			);
+			path = Thirdlib;
+			sourceTree = "<group>";
+		};
+		F38F533318162E0F00195EAA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F38F533418162E0F00195EAA /* image_loading_default.png */,
+				F38F533518162E0F00195EAA /* image_loading_default@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		F3AE5299180FC80D0055AE17 = {
 			isa = PBXGroup;
 			children = (
+				F38F533018162B2100195EAA /* Thirdlib */,
 				F3AE52AB180FC80D0055AE17 /* NXLoadImage */,
 				F3AE52CA180FC80D0055AE17 /* NXLoadImageTests */,
 				F3AE52A4180FC80D0055AE17 /* Frameworks */,
@@ -104,6 +135,7 @@
 		F3AE52A4180FC80D0055AE17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F38F5338181663B500195EAA /* ImageIO.framework */,
 				F3AE52A5180FC80D0055AE17 /* Foundation.framework */,
 				F3AE52A7180FC80D0055AE17 /* CoreGraphics.framework */,
 				F3AE52A9180FC80D0055AE17 /* UIKit.framework */,
@@ -115,6 +147,9 @@
 		F3AE52AB180FC80D0055AE17 /* NXLoadImage */ = {
 			isa = PBXGroup;
 			children = (
+				F38F533A18166D2A00195EAA /* UIImageView+UIActivityIndicatorForSDWebImage.h */,
+				F38F533B18166D2A00195EAA /* UIImageView+UIActivityIndicatorForSDWebImage.m */,
+				F38F533318162E0F00195EAA /* Resource */,
 				F39FFCCC181122190035F336 /* HUDLoadingView.h */,
 				F39FFCCD181122190035F336 /* HUDLoadingView.m */,
 				F3AE52B4180FC80D0055AE17 /* AppDelegate.h */,
@@ -233,9 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38F533718162E0F00195EAA /* image_loading_default@2x.png in Resources */,
 				F3AE52BE180FC80D0055AE17 /* Images.xcassets in Resources */,
 				F3AE52B0180FC80D0055AE17 /* InfoPlist.strings in Resources */,
 				F3AE52B9180FC80D0055AE17 /* Main.storyboard in Resources */,
+				F38F533618162E0F00195EAA /* image_loading_default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +293,7 @@
 			files = (
 				F3AE52BC180FC80D0055AE17 /* ViewController.m in Sources */,
 				F39FFCCE181122190035F336 /* HUDLoadingView.m in Sources */,
+				F38F533C18166D2A00195EAA /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
 				F3AE52B6180FC80D0055AE17 /* AppDelegate.m in Sources */,
 				F3AE52B2180FC80D0055AE17 /* main.m in Sources */,
 			);
@@ -384,9 +422,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/cienet/Desktop,
+					/Users/cienet/Desktop/Code/NXLoadImage/Thirdlib,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NXLoadImage/NXLoadImage-Prefix.pch";
 				INFOPLIST_FILE = "NXLoadImage/NXLoadImage-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,9 +441,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/cienet/Desktop,
+					/Users/cienet/Desktop/Code/NXLoadImage/Thirdlib,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NXLoadImage/NXLoadImage-Prefix.pch";
 				INFOPLIST_FILE = "NXLoadImage/NXLoadImage-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
